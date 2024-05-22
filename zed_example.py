@@ -34,7 +34,7 @@ image_right = sl.Mat()
 runtime_parameters = sl.RuntimeParameters()
 tv = OpenTeleVision(resolution)
 
-while True :
+while True:
     start = time.time()
     
     if zed.grab(runtime_parameters) == sl.ERROR_CODE.SUCCESS:
