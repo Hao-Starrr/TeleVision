@@ -3,9 +3,11 @@ np.set_printoptions(precision=2, suppress=True)
 
 import time
 import cv2
-from TeleVision import OpenTeleVision
+from TeleVision import TeleVision as OpenTeleVision
+# 控制zed相机
 import pyzed.sl as sl
 
+# 坐标系从Y轴向上转换为Z轴向上。
 grd_yup2grd_zup = np.array([[0, 0, -1, 0],
                             [-1, 0, 0, 0],
                             [0, 1, 0, 0],
@@ -45,4 +47,5 @@ while True :
     tv.modify_shared_image(np.vstack((rgb_left, rgb_right)))
     
     end = time.time()
+    
 zed.close()
