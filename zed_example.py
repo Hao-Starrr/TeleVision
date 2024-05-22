@@ -46,6 +46,18 @@ while True:
     
     tv.modify_shared_image(np.vstack((rgb_left, rgb_right)))
     
+    # 提取手部数据
+    left_hand = tv.left_hand
+    right_hand = tv.right_hand
+    left_landmarks = tv.left_landmarks
+    right_landmarks = tv.right_landmarks
+
+    # 在这里处理手部数据，例如打印或保存
+    print("Left Hand:", left_hand)
+    print("Right Hand:", right_hand)
+    print("Left Landmarks:", left_landmarks)
+    print("Right Landmarks:", right_landmarks)
+    
     end = time.time()
     
 zed.close()
